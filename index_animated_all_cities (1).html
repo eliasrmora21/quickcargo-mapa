@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa 3D Global - Quick Cargo Nicaragua</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+    html, body, #cesiumContainer {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5ZjQwMzdkNS03ZTkzLTQ4ZWYtOTlmZC02YjZlODZiYTNhNTIiLCJpZCI6MzExNzM2LCJpYXQiOjE3NDk3NjI2OTB9.DooWds4IKJaZc4LXnLRuylS-LvebinvEHr-m9ia0giM';
+
+    const viewer = new Cesium.Viewer('cesiumContainer', {
+      terrainProvider: Cesium.createWorldTerrain()
+    });
+
+    const nicaragua = Cesium.Cartesian3.fromDegrees(-85.2072, 12.8654);
+    viewer.entities.add({
+      name: "Nicaragua",
+      position: nicaragua,
+      point: { pixelSize: 14, color: Cesium.Color.CYAN },
+      label: {
+        text: "Nicaragua",
+        font: "14pt sans-serif",
+        fillColor: Cesium.Color.CYAN,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 2,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+
+
+    const city_0 = Cesium.Cartesian3.fromDegrees(-97.5164, 35.4676);
+    viewer.entities.add({
+      id: "city_0",
+      position: city_0,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Oklahoma",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Oklahoma",
+      polyline: {
+        positions: [city_0, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_1 = Cesium.Cartesian3.fromDegrees(-96.797, 32.7767);
+    viewer.entities.add({
+      id: "city_1",
+      position: city_1,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Dallas",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Dallas",
+      polyline: {
+        positions: [city_1, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_2 = Cesium.Cartesian3.fromDegrees(-99.9018, 31.9686);
+    viewer.entities.add({
+      id: "city_2",
+      position: city_2,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Texas",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Texas",
+      polyline: {
+        positions: [city_2, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_3 = Cesium.Cartesian3.fromDegrees(-104.9903, 39.7392);
+    viewer.entities.add({
+      id: "city_3",
+      position: city_3,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Denver, Colorado",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Denver, Colorado",
+      polyline: {
+        positions: [city_3, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_4 = Cesium.Cartesian3.fromDegrees(-94.6859, 46.7296);
+    viewer.entities.add({
+      id: "city_4",
+      position: city_4,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Minnesota",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Minnesota",
+      polyline: {
+        positions: [city_4, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_5 = Cesium.Cartesian3.fromDegrees(-89.6165, 44.5);
+    viewer.entities.add({
+      id: "city_5",
+      position: city_5,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Wisconsin",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Wisconsin",
+      polyline: {
+        positions: [city_5, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_6 = Cesium.Cartesian3.fromDegrees(-87.6298, 41.8781);
+    viewer.entities.add({
+      id: "city_6",
+      position: city_6,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Chicago, Illinois",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Chicago, Illinois",
+      polyline: {
+        positions: [city_6, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_7 = Cesium.Cartesian3.fromDegrees(-86.1581, 39.7684);
+    viewer.entities.add({
+      id: "city_7",
+      position: city_7,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Indianapolis",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Indianapolis",
+      polyline: {
+        positions: [city_7, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_8 = Cesium.Cartesian3.fromDegrees(-86.5804, 35.5175);
+    viewer.entities.add({
+      id: "city_8",
+      position: city_8,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Tennessee",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Tennessee",
+      polyline: {
+        positions: [city_8, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_9 = Cesium.Cartesian3.fromDegrees(-92.3731, 35.201);
+    viewer.entities.add({
+      id: "city_9",
+      position: city_9,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Arkansas",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Arkansas",
+      polyline: {
+        positions: [city_9, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_10 = Cesium.Cartesian3.fromDegrees(-86.9023, 32.3182);
+    viewer.entities.add({
+      id: "city_10",
+      position: city_10,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Alabama",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Alabama",
+      polyline: {
+        positions: [city_10, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_11 = Cesium.Cartesian3.fromDegrees(-91.9623, 30.9843);
+    viewer.entities.add({
+      id: "city_11",
+      position: city_11,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Louisiana",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Louisiana",
+      polyline: {
+        positions: [city_11, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_12 = Cesium.Cartesian3.fromDegrees(-82.9071, 40.4173);
+    viewer.entities.add({
+      id: "city_12",
+      position: city_12,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Ohio",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Ohio",
+      polyline: {
+        positions: [city_12, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_13 = Cesium.Cartesian3.fromDegrees(-83.0458, 42.3314);
+    viewer.entities.add({
+      id: "city_13",
+      position: city_13,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Detroit",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Detroit",
+      polyline: {
+        positions: [city_13, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_14 = Cesium.Cartesian3.fromDegrees(-87.6298, 41.8781);
+    viewer.entities.add({
+      id: "city_14",
+      position: city_14,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Chicago",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Chicago",
+      polyline: {
+        positions: [city_14, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_15 = Cesium.Cartesian3.fromDegrees(-79.3832, 43.65107);
+    viewer.entities.add({
+      id: "city_15",
+      position: city_15,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Toronto",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Toronto",
+      polyline: {
+        positions: [city_15, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_16 = Cesium.Cartesian3.fromDegrees(-74.006, 40.7128);
+    viewer.entities.add({
+      id: "city_16",
+      position: city_16,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "New York",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta New York",
+      polyline: {
+        positions: [city_16, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_17 = Cesium.Cartesian3.fromDegrees(-73.5673, 45.5017);
+    viewer.entities.add({
+      id: "city_17",
+      position: city_17,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Montreal",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Montreal",
+      polyline: {
+        positions: [city_17, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_18 = Cesium.Cartesian3.fromDegrees(-71.0589, 42.3601);
+    viewer.entities.add({
+      id: "city_18",
+      position: city_18,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Boston",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Boston",
+      polyline: {
+        positions: [city_18, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_19 = Cesium.Cartesian3.fromDegrees(-75.5277, 38.9108);
+    viewer.entities.add({
+      id: "city_19",
+      position: city_19,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Delaware",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Delaware",
+      polyline: {
+        positions: [city_19, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_20 = Cesium.Cartesian3.fromDegrees(-119.4179, 36.7783);
+    viewer.entities.add({
+      id: "city_20",
+      position: city_20,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "California",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta California",
+      polyline: {
+        positions: [city_20, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_21 = Cesium.Cartesian3.fromDegrees(-115.1398, 36.1699);
+    viewer.entities.add({
+      id: "city_21",
+      position: city_21,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Las Vegas",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Las Vegas",
+      polyline: {
+        positions: [city_21, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_22 = Cesium.Cartesian3.fromDegrees(-118.2437, 34.0522);
+    viewer.entities.add({
+      id: "city_22",
+      position: city_22,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Los Angeles",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Los Angeles",
+      polyline: {
+        positions: [city_22, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_23 = Cesium.Cartesian3.fromDegrees(-81.5158, 27.6648);
+    viewer.entities.add({
+      id: "city_23",
+      position: city_23,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Florida",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Florida",
+      polyline: {
+        positions: [city_23, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_24 = Cesium.Cartesian3.fromDegrees(-82.9001, 32.1656);
+    viewer.entities.add({
+      id: "city_24",
+      position: city_24,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Georgia",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Georgia",
+      polyline: {
+        positions: [city_24, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_25 = Cesium.Cartesian3.fromDegrees(-79.0193, 35.7596);
+    viewer.entities.add({
+      id: "city_25",
+      position: city_25,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "North Carolina",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta North Carolina",
+      polyline: {
+        positions: [city_25, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_26 = Cesium.Cartesian3.fromDegrees(-81.1637, 33.8361);
+    viewer.entities.add({
+      id: "city_26",
+      position: city_26,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "South Carolina",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta South Carolina",
+      polyline: {
+        positions: [city_26, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_27 = Cesium.Cartesian3.fromDegrees(-85.6024, 44.3148);
+    viewer.entities.add({
+      id: "city_27",
+      position: city_27,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Michigan",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Michigan",
+      polyline: {
+        positions: [city_27, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_28 = Cesium.Cartesian3.fromDegrees(-78.6569, 37.4316);
+    viewer.entities.add({
+      id: "city_28",
+      position: city_28,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.RED,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Virginia",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.RED,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Virginia",
+      polyline: {
+        positions: [city_28, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_29 = Cesium.Cartesian3.fromDegrees(114.5149, 38.0428);
+    viewer.entities.add({
+      id: "city_29",
+      position: city_29,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Shijiazhuang",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Shijiazhuang",
+      polyline: {
+        positions: [city_29, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_30 = Cesium.Cartesian3.fromDegrees(112.5492, 37.8706);
+    viewer.entities.add({
+      id: "city_30",
+      position: city_30,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Taiyuan",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Taiyuan",
+      polyline: {
+        positions: [city_30, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_31 = Cesium.Cartesian3.fromDegrees(113.6254, 34.7466);
+    viewer.entities.add({
+      id: "city_31",
+      position: city_31,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Zhengzhou",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Zhengzhou",
+      polyline: {
+        positions: [city_31, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_32 = Cesium.Cartesian3.fromDegrees(115.6505, 34.4361);
+    viewer.entities.add({
+      id: "city_32",
+      position: city_32,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Shangqiu",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Shangqiu",
+      polyline: {
+        positions: [city_32, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_33 = Cesium.Cartesian3.fromDegrees(121.4737, 31.2304);
+    viewer.entities.add({
+      id: "city_33",
+      position: city_33,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Shanghai",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Shanghai",
+      polyline: {
+        positions: [city_33, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_34 = Cesium.Cartesian3.fromDegrees(113.2644, 23.1291);
+    viewer.entities.add({
+      id: "city_34",
+      position: city_34,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Guangzhou",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Guangzhou",
+      polyline: {
+        positions: [city_34, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_35 = Cesium.Cartesian3.fromDegrees(104.0665, 30.5728);
+    viewer.entities.add({
+      id: "city_35",
+      position: city_35,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Chengdu",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Chengdu",
+      polyline: {
+        positions: [city_35, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_36 = Cesium.Cartesian3.fromDegrees(116.4074, 39.9042);
+    viewer.entities.add({
+      id: "city_36",
+      position: city_36,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Pekín",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.YELLOW,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Pekín",
+      polyline: {
+        positions: [city_36, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_37 = Cesium.Cartesian3.fromDegrees(-3.7038, 40.4168);
+    viewer.entities.add({
+      id: "city_37",
+      position: city_37,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.BLUE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Madrid",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.BLUE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Madrid",
+      polyline: {
+        positions: [city_37, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_38 = Cesium.Cartesian3.fromDegrees(2.1734, 41.3851);
+    viewer.entities.add({
+      id: "city_38",
+      position: city_38,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.BLUE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Barcelona",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.BLUE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Barcelona",
+      polyline: {
+        positions: [city_38, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_39 = Cesium.Cartesian3.fromDegrees(-0.3763, 39.4699);
+    viewer.entities.add({
+      id: "city_39",
+      position: city_39,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.BLUE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Valencia",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.BLUE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Valencia",
+      polyline: {
+        positions: [city_39, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_40 = Cesium.Cartesian3.fromDegrees(-2.93499, 43.263);
+    viewer.entities.add({
+      id: "city_40",
+      position: city_40,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.BLUE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Bilbao",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.BLUE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Bilbao",
+      polyline: {
+        positions: [city_40, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_41 = Cesium.Cartesian3.fromDegrees(37.6173, 55.7558);
+    viewer.entities.add({
+      id: "city_41",
+      position: city_41,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.PURPLE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Moscú",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.PURPLE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Moscú",
+      polyline: {
+        positions: [city_41, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_42 = Cesium.Cartesian3.fromDegrees(30.3351, 59.9343);
+    viewer.entities.add({
+      id: "city_42",
+      position: city_42,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.PURPLE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "San Petersburgo",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.PURPLE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta San Petersburgo",
+      polyline: {
+        positions: [city_42, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_43 = Cesium.Cartesian3.fromDegrees(82.9346, 55.0084);
+    viewer.entities.add({
+      id: "city_43",
+      position: city_43,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.PURPLE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Novosibirsk",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.PURPLE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Novosibirsk",
+      polyline: {
+        positions: [city_43, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    const city_44 = Cesium.Cartesian3.fromDegrees(60.5975, 56.8389);
+    viewer.entities.add({
+      id: "city_44",
+      position: city_44,
+      point: new Cesium.PointGraphics({
+        pixelSize: new Cesium.CallbackProperty(() => {
+          return 6 + 2 * Math.abs(Math.sin(Date.now() * 0.002));
+        }, false),
+        color: Cesium.Color.PURPLE,
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1
+      }),
+      label: {
+        text: "Yekaterinburgo",
+        font: "12pt sans-serif",
+        fillColor: Cesium.Color.PURPLE,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 1,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(0, -20)
+      }
+    });
+    viewer.entities.add({
+      name: "Ruta Yekaterinburgo",
+      polyline: {
+        positions: [city_44, nicaragua],
+        width: 2,
+        material: new Cesium.PolylineGlowMaterialProperty({
+          glowPower: 0.2,
+          color: Cesium.Color.CYAN
+        }),
+        clampToGround: false
+      }
+    });
+
+    viewer.zoomTo(viewer.entities);
+  </script>
+</body>
+</html>
